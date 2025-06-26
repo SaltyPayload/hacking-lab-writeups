@@ -1,4 +1,4 @@
-# 🐧 HTB Academy – Linux Fundamentals Notes
+# 🌧 HTB Academy – Linux Fundamentals Notes
 
 > Notes from the Linux module on Hack The Box Academy
 > ✅ Completed up to: Filter Contents + Bandit Level 20
@@ -20,7 +20,7 @@
   * `/dev` – Device files
   * `/proc` – Runtime system info
 
-### 🗆 Linux Distributions
+### 🿶 Linux Distributions
 
 * Same kernel, different packaging/tools.
 * Package managers:
@@ -94,7 +94,12 @@
 * `cat`, `less`, `more` – read file contents
 * `echo "text" > file` – write to file
 * `echo "text" >> file` – append
-* `head`, `tail`, `cut`, `awk`, `sed` – content manipulation
+* `head` – show first 10 lines (default)
+* `tail` – show last 10 lines (default)
+* `cut`, `awk`, `sed`, `tr`, `column` – advanced manipulation and formatting
+* `tee` – write to file while also displaying output
+* `sort` – sort lines alphabetically or numerically
+* `wc -l` – count lines
 
 ### 🔍 Finding
 
@@ -103,6 +108,8 @@
 * `find . -type f -exec grep 'password' {} \;`
 * `locate <file>` – requires updatedb
 * `grep`, `egrep`, `zgrep` – search content
+
+  * `grep -v` – exclude matches
 * `strings <binary>` – extract readable strings
 * `diff file1 file2` – compare files
 
@@ -126,12 +133,14 @@ ls && echo "Success" || echo "Failed"
 
 ### 🔢 Flags & Tricks
 
-* `cut -d":" -f1 /etc/passwd`
-* `awk '{print $1}' file`
-* `sed 's/old/new/g'`
+* `cut -d":" -f1 /etc/passwd` – show usernames
+* `awk '{print $1}' file` – show first word of each line
+* `awk '{print $1, $NF}'` – show first and last field
+* `sed 's/old/new/g'` – replace globally
 * `basename /path/to/file`
 * `dirname /path/to/file`
-* `wc -l` – count lines
+* `tr ':' ' '` – replace characters (e.g., colon with space)
+* `column -t` – display tabular output
 
 ---
 
@@ -243,7 +252,3 @@ alias cls='clear'
 * `tar -xvf file.tar` – extract tar
 
 ---
-
-
-
-
